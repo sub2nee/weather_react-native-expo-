@@ -193,13 +193,29 @@ export default function HomeScreen() {
                         <View className="mx-4 flex justify-around flex-1 mb-2">
                             {/* location  */}
                             <Text
-                                className="text-white text-center text-3xl font-bold text"
-                                style={{ fontFamily: 'Tmoney' }}
+                                className="text-center text-3xl font-bold text"
+                                style={{
+                                    fontFamily: 'Tmoney',
+                                    color:
+                                        parseInt(new Date().getHours()) >= 5 &&
+                                        parseInt(new Date().getHours()) <= 17
+                                            ? '#7e8084'
+                                            : 'white',
+                                }}
                             >
                                 {location?.name},&nbsp;
                                 <Text
-                                    className="text-xl font-bold tracking-w text-gray-300"
-                                    style={{ fontFamily: 'Tmoney' }}
+                                    className="text-xl font-bold tracking-w"
+                                    style={{
+                                        fontFamily: 'Tmoney',
+                                        color:
+                                            parseInt(new Date().getHours()) >=
+                                                5 &&
+                                            parseInt(new Date().getHours()) <=
+                                                17
+                                                ? '#afb1b3'
+                                                : 'gray',
+                                    }}
                                 >
                                     {' ' + location?.country}
                                 </Text>
